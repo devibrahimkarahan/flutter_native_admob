@@ -12,8 +12,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@android:color/transparent"
-            android:orientation="horizontal"
-            android:baselineAligned="false">
+            android:baselineAligned="false"
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -26,10 +26,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:paddingStart="3dp"
-                    android:paddingTop="1dp"
-                    android:paddingEnd="3dp"
-                    android:paddingBottom="1dp"
+                    android:background="@drawable/rounded_corner"
+                    android:paddingStart="16dp"
+                    android:paddingTop="2dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="4dp"
                     android:text="@string/ad_label"
                     android:textColor="#FFFFFF"
                     android:textSize="12sp" />
