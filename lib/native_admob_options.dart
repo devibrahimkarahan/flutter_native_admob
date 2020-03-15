@@ -37,7 +37,7 @@ class NativeAdmobOptions {
     this.adLabelTextStyle = const NativeTextStyle(
       fontSize: 12,
       color: Colors.white,
-      backgroundColor: Color(0xFFFFCC66),
+      backgroundColor: Color(0x00FFCC66),
     ),
     this.headlineTextStyle = const NativeTextStyle(
       fontSize: 16,
