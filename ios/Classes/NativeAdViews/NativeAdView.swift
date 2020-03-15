@@ -52,10 +52,12 @@ class NativeAdView: GADUnifiedNativeAdView {
         return label
     }()
         
-    let adBodyLbl: UILabel = {
-        let label = UILabel()
+    let adBodyLbl: UITextView = {
+        let label = UITextView()
+        label.textContainerInset = UIEdgeInsets.zero
+        label.textContainer.lineFragmentPadding = 0
+        label.backgroundColor = UIColor.clear
         label.font = UIFont.systemFont(ofSize: 12)
-        label.numberOfLines = 0
         return label
     }()
     
@@ -116,17 +118,24 @@ private extension NativeAdView {
        .spacing(10)
        .children([
            adHeadLineLbl,
-           holderView,
+           adBodyLbl,
        ])
         
+        let horLayout = StackLayout()
+              .direction(.horizontal)
+              .spacing(10)
+              .children([
+                  textLayout,
+                  adMediaView,
+              ])
+               
 
         let mainLayout = StackLayout()
             .direction(.vertical)
             .spacing(5)
             .children([
                 holderView,
-                adMediaView,
-                StackViewItem(view: adBodyLbl, attribute: .fill(insets: .zero)),
+                horLayout,
             ])
         addSubview(mainLayout)
         mainLayout.autoPinEdgesToSuperviewEdges()
