@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.RatingBar
 import android.widget.TextView
 import com.google.android.gms.ads.formats.MediaView
 import com.google.android.gms.ads.formats.UnifiedNativeAd
@@ -33,7 +32,7 @@ class NativeAdView @JvmOverloads constructor(
 
     private val adHeadline: TextView
     //  private val adAdvertiser: TextView
-    private val adBody: TextView
+//    private val adBody: TextView
     //  private val adPrice: TextView
 //  private val adStore: TextView
     private val adAttribution: TextView
@@ -51,14 +50,14 @@ class NativeAdView @JvmOverloads constructor(
 
         adHeadline = adView.findViewById(R.id.ad_headline)
 //    adAdvertiser = adView.findViewById(R.id.ad_advertiser)
-        adBody = adView.findViewById(R.id.ad_body)
+//        adBody = adView.findViewById(R.id.ad_body)
 //    adPrice = adView.findViewById(R.id.ad_price)
 //    adStore = adView.findViewById(R.id.ad_store)
         adAttribution = adView.findViewById(R.id.ad_attribution)
 
 //    ratingBar = adView.findViewById(R.id.ad_stars)
 
-        adAttribution.background = Color.parseColor("#FFCC66").toRoundedColor(3f)
+//        adAttribution.background = Color.parseColor("#FFCC66").toRoundedColor(3f)
 //    callToAction = adView.findViewById(R.id.ad_call_to_action)
 
         initialize()
@@ -71,7 +70,7 @@ class NativeAdView @JvmOverloads constructor(
 
         // Register the view used for each individual asset.
         adView.headlineView = adHeadline
-        adView.bodyView = adBody
+//        adView.bodyView = adBody
 //    adView.callToActionView = callToAction
 //    adView.iconView = adView.findViewById(R.id.ad_icon)
 //    adView.priceView = adPrice
@@ -85,22 +84,22 @@ class NativeAdView @JvmOverloads constructor(
 
         // Some assets are guaranteed to be in every UnifiedNativeAd.
         adMedia.setMediaContent(nativeAd.mediaContent)
-        adMedia.setImageScaleType(ImageView.ScaleType.CENTER_INSIDE)
+        adMedia.setImageScaleType(ImageView.ScaleType.CENTER_CROP)
 
         adHeadline.text = nativeAd.headline
-        adBody.text = nativeAd.body
+//        adBody.text = nativeAd.body
 //    (adView.callToActionView as Button).text = nativeAd.callToAction
 
         // These assets aren't guaranteed to be in every UnifiedNativeAd, so it's important to
         // check before trying to display them.
-        val icon = nativeAd.icon
-
-        if (icon == null) {
-            adView.iconView.visibility = View.GONE
-        } else {
-            (adView.iconView as ImageView).setImageDrawable(icon.drawable)
-            adView.iconView.visibility = View.VISIBLE
-        }
+//        val icon = nativeAd.icon
+//
+//        if (icon == null) {
+//            adView.iconView.visibility = View.GONE
+//        } else {
+//            (adView.iconView as ImageView).setImageDrawable(icon.drawable)
+//            adView.iconView.visibility = View.VISIBLE
+//        }
 
 //    if (nativeAd.price == null) {
 //      adPrice.visibility = View.INVISIBLE
@@ -116,12 +115,12 @@ class NativeAdView @JvmOverloads constructor(
 //      adStore.text = nativeAd.store
 //    }
 
-        if (nativeAd.starRating == null) {
-            adView.starRatingView.visibility = View.INVISIBLE
-        } else {
-            (adView.starRatingView as RatingBar).rating = nativeAd.starRating!!.toFloat()
-            adView.starRatingView.visibility = View.VISIBLE
-        }
+//        if (nativeAd.starRating == null) {
+//            adView.starRatingView.visibility = View.INVISIBLE
+//        } else {
+//            (adView.starRatingView as RatingBar).rating = nativeAd.starRating!!.toFloat()
+//            adView.starRatingView.visibility = View.VISIBLE
+//        }
 
 //    if (nativeAd.advertiser == null) {
 //      adAdvertiser.visibility = View.INVISIBLE
@@ -139,10 +138,10 @@ class NativeAdView @JvmOverloads constructor(
 
 //    ratingBar.progressDrawable
 //        .setColorFilter(options.ratingColor, PorterDuff.Mode.SRC_ATOP)
-
-        options.adLabelTextStyle.backgroundColor?.let {
-            adAttribution.background = it.toRoundedColor(3f)
-        }
+//
+//        options.adLabelTextStyle.backgroundColor?.let {
+//            adAttribution.background = it.toRoundedColor(64f)
+//        }
         adAttribution.textSize = options.adLabelTextStyle.fontSize
         adAttribution.setTextColor(options.adLabelTextStyle.color)
 
@@ -151,10 +150,10 @@ class NativeAdView @JvmOverloads constructor(
 
 //    adAdvertiser.setTextColor(options.advertiserTextStyle.color)
 //    adAdvertiser.textSize = options.advertiserTextStyle.fontSize
-
-        adBody.setTextColor(options.bodyTextStyle.color)
-        adBody.textSize = options.bodyTextStyle.fontSize
-
+//
+//        adBody.setTextColor(options.bodyTextStyle.color)
+//        adBody.textSize = options.bodyTextStyle.fontSize
+//
 //    adStore.setTextColor(options.storeTextStyle.color)
 //    adStore.textSize = options.storeTextStyle.fontSize
 //
