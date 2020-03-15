@@ -108,7 +108,7 @@ private extension NativeAdView {
         holderView.addSubview(adLabelView)
         adLabelView.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .trailing)
 
-        let height = UIScreen.main.bounds.width/3
+        let height = UIScreen.main.bounds.width/3.5
         adMediaView.autoSetDimensions(to: CGSize(width: height, height: height))
 
         // adMediaView.setContentHuggingPriority(.defaultLow, for: .vertical)
