@@ -32,7 +32,7 @@ class NativeAdView @JvmOverloads constructor(
 
     private val adHeadline: TextView
     //  private val adAdvertiser: TextView
-//    private val adBody: TextView
+    private val adBody: TextView
     //  private val adPrice: TextView
 //  private val adStore: TextView
     private val adAttribution: TextView
@@ -50,7 +50,7 @@ class NativeAdView @JvmOverloads constructor(
 
         adHeadline = adView.findViewById(R.id.ad_headline)
 //    adAdvertiser = adView.findViewById(R.id.ad_advertiser)
-//        adBody = adView.findViewById(R.id.ad_body)
+        adBody = adView.findViewById(R.id.ad_body)
 //    adPrice = adView.findViewById(R.id.ad_price)
 //    adStore = adView.findViewById(R.id.ad_store)
         adAttribution = adView.findViewById(R.id.ad_attribution)
@@ -70,7 +70,7 @@ class NativeAdView @JvmOverloads constructor(
 
         // Register the view used for each individual asset.
         adView.headlineView = adHeadline
-//        adView.bodyView = adBody
+        adView.bodyView = adBody
 //    adView.callToActionView = callToAction
 //    adView.iconView = adView.findViewById(R.id.ad_icon)
 //    adView.priceView = adPrice
@@ -87,7 +87,7 @@ class NativeAdView @JvmOverloads constructor(
         adMedia.setImageScaleType(ImageView.ScaleType.CENTER_CROP)
 
         adHeadline.text = nativeAd.headline
-//        adBody.text = nativeAd.body
+        adBody.text = nativeAd.body
 //    (adView.callToActionView as Button).text = nativeAd.callToAction
 
         // These assets aren't guaranteed to be in every UnifiedNativeAd, so it's important to
@@ -151,8 +151,8 @@ class NativeAdView @JvmOverloads constructor(
 //    adAdvertiser.setTextColor(options.advertiserTextStyle.color)
 //    adAdvertiser.textSize = options.advertiserTextStyle.fontSize
 //
-//        adBody.setTextColor(options.bodyTextStyle.color)
-//        adBody.textSize = options.bodyTextStyle.fontSize
+        adBody.setTextColor(options.bodyTextStyle.color)
+        adBody.textSize = options.bodyTextStyle.fontSize
 //
 //    adStore.setTextColor(options.storeTextStyle.color)
 //    adStore.textSize = options.storeTextStyle.fontSize
