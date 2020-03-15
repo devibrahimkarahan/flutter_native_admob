@@ -81,15 +81,14 @@ class NativeAdView: GADUnifiedNativeAdView {
         // video/image asset.
         adMediaView.mediaContent = nativeAd.mediaContent
         adMediaView.contentMode = .scaleAspectFill
-
         // Populate the native ad view with the native ad assets.
         // The headline is guaranteed to be present in every native ad.
         adHeadLineLbl.text = nativeAd.headline
-
+        
         // These assets are not guaranteed to be present. Check that they are before
         // showing or hiding them.
         adBodyLbl.text = nativeAd.body
-        adBodyLbl.isHidden = nativeAd.body == nil
+        adBodyLbl.isHidden = nativeAd.body.isNilOrEmpty
 
         // In order for the SDK to process touch events properly, user interaction
         // should be disabled.
@@ -120,16 +119,17 @@ private extension NativeAdView {
            holderView,
        ])
         
-        let horLayout = StackLayout()
-        .direction(.horizontal)
-        .spacing(24)
-        .children([
-            textLayout,
-            adMediaView,
-        ])
-       
-        addSubview(horLayout)
-        horLayout.autoPinEdgesToSuperviewEdges()
+
+        let mainLayout = StackLayout()
+            .direction(.vertical)
+            .spacing(5)
+            .children([
+                holderView,
+                adMediaView,
+                StackViewItem(view: adBodyLbl, attribute: .fill(insets: .zero)),
+            ])
+        addSubview(mainLayout)
+        mainLayout.autoPinEdgesToSuperviewEdges()
     }
     
     func updateOptions() {
