@@ -27,9 +27,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:ellipsize="end"
-                    android:maxLines="2"
-                    android:textColor="#0000FF"
-                    android:textSize="16sp" />
+                    android:maxLines="2" />
 
                 <TextView
                     android:id="@+id/ad_body"
@@ -39,8 +37,7 @@
                     android:layout_marginEnd="20dp"
                     android:layout_marginRight="20dp"
                     android:ellipsize="end"
-                    android:maxLines="3"
-                    android:textSize="12sp" />
+                    android:maxLines="3" />
 
                 <TextView
                     android:id="@+id/ad_attribution"
@@ -54,9 +51,7 @@
                     android:paddingTop="1dp"
                     android:paddingEnd="12dp"
                     android:paddingBottom="3dp"
-                    android:text="@string/ad_label"
-                    android:textColor="#4a4a4a"
-                    android:textSize="12sp" />
+                    android:text="@string/ad_label" />
             </RelativeLayout>
 
             <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"

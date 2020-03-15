@@ -47,7 +47,7 @@ class _MyAppState extends State<MyApp> {
                 adUnitID: _adUnitID,
                 controller: _controller,
                 options: NativeAdmobOptions(
-                  ratingColor: Colors.red,
+//                  ratingColor: Colors.red,
                   headlineTextStyle: NativeTextStyle(color: Colors.red),
                   bodyTextStyle: NativeTextStyle(color: Colors.red),
                 ),
