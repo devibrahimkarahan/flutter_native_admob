@@ -115,7 +115,7 @@ private extension NativeAdView {
         // adMediaView.setContentHuggingPriority(.defaultLow, for: .vertical)
         let textLayout = StackLayout()
        .direction(.vertical)
-       .spacing(10)
+       .spacing(5)
        .children([
            adHeadLineLbl,
            adBodyLbl,
@@ -123,7 +123,7 @@ private extension NativeAdView {
         
         let horLayout = StackLayout()
               .direction(.horizontal)
-              .spacing(10)
+              .spacing(24)
               .children([
                   textLayout,
                   adMediaView,
@@ -132,7 +132,7 @@ private extension NativeAdView {
 
         let mainLayout = StackLayout()
             .direction(.vertical)
-            .spacing(5)
+            .spacing(10)
             .children([
                 holderView,
                 horLayout,
