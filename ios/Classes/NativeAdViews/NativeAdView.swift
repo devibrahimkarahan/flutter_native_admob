@@ -38,7 +38,7 @@ class NativeAdView: GADUnifiedNativeAdView {
         adMediaView.layer.cornerRadius = 5
         adMediaView.clipsToBounds = true
         return adMediaView
-    }() 
+    }()
     
     let adHeadLineLbl: UITextView = {
         let label = UITextView()
@@ -109,7 +109,7 @@ private extension NativeAdView {
         holderView.addSubview(adLabelView)
         adLabelView.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .trailing)
 
-        let height = UIScreen.main.bounds.width/3.5
+        let height = UIScreen.main.bounds.width/3
         adMediaView.autoSetDimensions(to: CGSize(width: height, height: height))
 
         // adMediaView.setContentHuggingPriority(.defaultLow, for: .vertical)
