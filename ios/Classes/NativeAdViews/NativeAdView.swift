@@ -44,6 +44,8 @@ class NativeAdView: GADUnifiedNativeAdView {
         let label = UITextView()
         label.textContainerInset = UIEdgeInsets.zero
         label.textContainer.lineFragmentPadding = 0
+        label.textContainer.maximumNumberOfLines = 2
+        label.textContainer.lineBreakMode = .byTruncatingTail
         label.backgroundColor = UIColor.clear
         label.isSelectable = false
         label.isEditable = false
@@ -54,6 +56,8 @@ class NativeAdView: GADUnifiedNativeAdView {
         
     let adBodyLbl: UITextView = {
         let label = UITextView()
+        label.textContainer.maximumNumberOfLines = 2
+        label.textContainer.lineBreakMode = .byTruncatingTail
         label.textContainerInset = UIEdgeInsets.zero
         label.textContainer.lineFragmentPadding = 0
         label.backgroundColor = UIColor.clear
@@ -109,7 +113,7 @@ private extension NativeAdView {
         holderView.addSubview(adLabelView)
         adLabelView.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .trailing)
 
-        let height = UIScreen.main.bounds.width/3
+        let height = UIScreen.main.bounds.width/3.5
         adMediaView.autoSetDimensions(to: CGSize(width: height, height: height))
 
         // adMediaView.setContentHuggingPriority(.defaultLow, for: .vertical)
@@ -117,9 +121,9 @@ private extension NativeAdView {
        .direction(.vertical)
        .spacing(5)
        .children([
-            holderView,
            adHeadLineLbl,
            adBodyLbl,
+           holderView,
        ])
         
         let horLayout = StackLayout()
