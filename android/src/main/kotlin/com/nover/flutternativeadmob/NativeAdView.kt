@@ -142,17 +142,18 @@ class NativeAdView @JvmOverloads constructor(
 //        options.adLabelTextStyle.backgroundColor?.let {
 //            adAttribution.background = it.toRoundedColor(64f)
 //        }
-        adAttribution.textSize = options.adLabelTextStyle.fontSize
         adAttribution.setTextColor(options.adLabelTextStyle.color)
+        adAttribution.textSize = options.adLabelTextStyle.fontSize.toFloat()
 
         adHeadline.setTextColor(options.headlineTextStyle.color)
-        adHeadline.textSize = options.headlineTextStyle.fontSize
+        adHeadline.textSize = options.headlineTextStyle.fontSize.toFloat()
+
+        adBody.setTextColor(options.bodyTextStyle.color)
+        adBody.textSize = options.bodyTextStyle.fontSize.toFloat()
 
 //    adAdvertiser.setTextColor(options.advertiserTextStyle.color)
 //    adAdvertiser.textSize = options.advertiserTextStyle.fontSize
 //
-        adBody.setTextColor(options.bodyTextStyle.color)
-        adBody.textSize = options.bodyTextStyle.fontSize
 //
 //    adStore.setTextColor(options.storeTextStyle.color)
 //    adStore.textSize = options.storeTextStyle.fontSize
