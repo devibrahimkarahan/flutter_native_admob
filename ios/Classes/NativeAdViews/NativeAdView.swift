@@ -117,6 +117,7 @@ private extension NativeAdView {
        .direction(.vertical)
        .spacing(5)
        .children([
+            holderView,
            adHeadLineLbl,
            adBodyLbl,
        ])
@@ -129,16 +130,8 @@ private extension NativeAdView {
                   adMediaView,
               ])
                
-
-        let mainLayout = StackLayout()
-            .direction(.vertical)
-            .spacing(10)
-            .children([
-                holderView,
-                horLayout,
-            ])
-        addSubview(mainLayout)
-        mainLayout.autoPinEdgesToSuperviewEdges()
+        addSubview(horLayout)
+        horLayout.autoPinEdgesToSuperviewEdges()
     }
     
     func updateOptions() {
