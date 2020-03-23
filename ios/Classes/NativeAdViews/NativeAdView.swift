@@ -95,9 +95,7 @@ class NativeAdView: GADUnifiedNativeAdView {
         // showing or hiding them.
         adBodyLbl.text = nativeAd.body
         adBodyLbl.isHidden = nativeAd.body.isNilOrEmpty
-
-        // In order for the SDK to process touch events properly, user interaction
-        // should be disabled.
+        
         // callToActionBtn.isUserInteractionEnabled = false
     }
 }
@@ -105,6 +103,8 @@ class NativeAdView: GADUnifiedNativeAdView {
 private extension NativeAdView {
     
     func setupView() {
+        
+        
         self.mediaView = adMediaView
         self.headlineView = adHeadLineLbl
         self.bodyView = adBodyLbl
@@ -133,9 +133,10 @@ private extension NativeAdView {
                   textLayout,
                   adMediaView,
               ])
-               
+        horLayout.isUserInteractionEnabled = false
         addSubview(horLayout)
         horLayout.autoPinEdgesToSuperviewEdges()
+
     }
     
     func updateOptions() {

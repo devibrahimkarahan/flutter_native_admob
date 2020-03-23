@@ -19,6 +19,10 @@ Major updates
 - Add new `NativeAdmobOptions` for native styling
 - Add `NativeAdmobController` for fully control the widget
 
-## 2.0.0+1
+## 2.0.0+2
 
-Fix iOS layout and some elements that is not applied for the style
+Fix iOS and Android layout and some elements that is not applied for the style
+
+## 2.0.0+3
+
+Allow to dispose admob controller for better memory
